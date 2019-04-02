@@ -1,0 +1,9 @@
+
+
+sudo npm i -g @vue/cli
+vue create prospects
+npm run serve
+
+
+
+
