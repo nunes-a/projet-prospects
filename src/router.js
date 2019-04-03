@@ -25,6 +25,11 @@ export default new Router({
       path: '/intranet',
       name: 'intranet',
       component: () => import('./views/Intranet.vue')
+    },
+    {
+      path: '/intranet/mesprospects',
+      name: 'mesprospects',
+      component: () => import('./views/MesProspects.vue')
     }
   ]
 })

@@ -5,9 +5,6 @@
 		<input type="text" placeholder="Identifiant" name="identif" required>
 		<input type="password" placeholder="Mot de passe" name="motpasse" required>
 
-
-
-		
 		<label>
 		    <input type="checkbox" checked="checked" name="remember">
 		    <span> se souvenir de moi</span>
@@ -15,18 +12,20 @@
 
 		<input type="submit" name="connect" value="Connecter">
 		<br>
-		<span class="psw" id="forg">J'ai oublié ma <a href="#">mot de passe</a></span>
+		<span class="psw">J'ai oublié ma <a href="#">mot de passe</a></span>
 	</form> 
+
+	<FooterComp class="footcomp"></FooterComp>
   </div>
 </template>
 
 <script>
-import IntranetConnexion from '@/components/IntranetConnexion.vue'
+import FooterComp from '@/components/FooterComp.vue'
 
 export default {
   name: 'intranet',
   components: {
-    IntranetConnexion
+    FooterComp
   }
 }
 </script>
@@ -72,9 +71,12 @@ label {
 span {
 	font-size: 12px;
 }
-/*
-#forg {
-	float: right;
+
+.footcomp {
+	position: fixed;
+	right: 0;
+	bottom: 0;
+	left: 0;
 }
-*/
+
 </style>

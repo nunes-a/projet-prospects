@@ -50,4 +50,8 @@ html, body {
 .intra {
   float: right;
 }
+
+a:target {
+  border: none;
+}
 </style>

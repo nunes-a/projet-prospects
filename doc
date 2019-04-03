@@ -1,9 +1,26 @@
+===== VUE.JS =====
 
+***** INSTALLATION DU VUE.JS CLI *****
+Vue CLI besoin Node.js version 8.9 ou au-dessus.
+Installer le nouveau paquet :
+    1) sudo npm i -g @vue/cli
 
-sudo npm i -g @vue/cli
-vue create prospects
-npm run serve
+Création du project vue.js. "prospects" serais le nom du dossier :
+    2) vue create prospects
 
+Dans le terminal, toujours que nous voulons regarder le site, nous besoin de compiler :
+    3) npm run serve
+        .. généralement, dans le terminal sera indiqué l'adresse "localhost:8080" pour regarder le site dans le navigateur
+
+***** AJOUTER BOOTSTRAP DANS NOTRE PROJET *****
+Installation de Bootstrap et ses dépendances :
+    4) npm install bootstrap jquery popper.js
+
+Dans le fichier /src/mains.js , ajouter ses lignes
+    import 'bootstrap'
+    import 'bootstrap/dist/css/bootstrap.min.css'
+
+***** FICHIER .JSON *****
 
 
 
