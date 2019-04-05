@@ -6,25 +6,25 @@
 	<table class="table table-striped">
 	  <thead>
 	    <tr>
-	      <th scope="col">id</th>
 	      <th scope="col">Nom</th>
 	      <th scope="col">Prénom</th>
 	      <th scope="col"></th>
 	      <th scope="col"></th>
-
+	      <th scope="col"></th>
 	    </tr>
 	  </thead>
 	  <tbody>
 	    <tr v-for="prospect in prospects">
-	      <td>{{prospect.id}}</td>
 	      <td>{{prospect.nom}}</td>
 	      <td>{{prospect.prenom}}</td>
-	      <td><button class="btn btn-danger btn-sm" v-on:click="removeProspect(id)">X</button></td>
-	      <td>O</td>
+	      <td><font-awesome-icon  v-on:click="removeProspect(prospect)" icon="trash-alt"/></td>
+	      <td><font-awesome-icon icon="eye"/></td>
+	      <td><font-awesome-icon icon="phone"/></td>
 	    </tr>
 	  </tbody>
 	</table>
 
+	<div>{{ info }}</div>
  
   </div>
 </template>
@@ -43,27 +43,30 @@ export default {
 		return {
 			prospects: [
 		        { 
-		        	id: 1, 
-		            nom: "Nunes",
-		            prenom: "Alexandre"
+		        	id: 1, nom: "Nunes", prenom: "Alexandre"
 		        },
 		        { 
-		            id: 2, 
-		            nom: "José",
-		            prenom: "Miguel"
+		            id: 2, nom: "José", prenom: "Miguel"
 		        }
-	    	]
+	    	],
+	    	info: null
 		}
 	},
 
 	methods: {
-		removeProspect: function(id) {
-        	var index = this.prospects.indexOf(id);
+		removeProspect: function(prospect) {
+        	var index = this.prospects.indexOf(prospect);
             if (index > -1) {
                 this.prospects.splice(index, 1);
             }
         }
-	}
+	},
+
+	mounted () {
+	    axios
+	      .get('https://api.coindesk.com/v1/bpi/currentprice.json')
+	      .then(response => (this.info = response))
+	  }
 
 
 }

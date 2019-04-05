@@ -1,26 +1,63 @@
-===== VUE.JS =====
+============================================================================================================================
+=============== VUE.JS ===============
+============================================================================================================================
 
+============================================================================================================================
 ***** INSTALLATION DU VUE.JS CLI *****
+
 Vue CLI besoin Node.js version 8.9 ou au-dessus.
 Installer le nouveau paquet :
     1) sudo npm i -g @vue/cli
+    
+Regarder/confirmer la version du Vue.JS installé
+    2) vue --version
 
 Création du project vue.js. "prospects" serais le nom du dossier :
-    2) vue create prospects
+    3) vue create prospects
 
 Dans le terminal, toujours que nous voulons regarder le site, nous besoin de compiler :
-    3) npm run serve
+    4) npm run serve
         .. généralement, dans le terminal sera indiqué l'adresse "localhost:8080" pour regarder le site dans le navigateur
 
+Si nous besoin de atualizar le Npm :
+    5) npm install -g npm
+
+============================================================================================================================
 ***** AJOUTER BOOTSTRAP DANS NOTRE PROJET *****
+
 Installation de Bootstrap et ses dépendances :
-    4) npm install bootstrap jquery popper.js
+    1) npm install bootstrap jquery popper.js
 
 Dans le fichier /src/mains.js , ajouter ses lignes
     import 'bootstrap'
     import 'bootstrap/dist/css/bootstrap.min.css'
 
-***** FICHIER .JSON *****
+============================================================================================================================
+***** AJOUTER ICONS FONTAWESOME *****
 
+Installation du Font Awesome SVG Core, du contenu d'icônes, et Vue component:
+    1) npm i --save @fortawesome/fontawesome-svg-core
+    2) npm i --save @fortawesome/free-solid-svg-icons
+    3) npm i --save @fortawesome/vue-fontawesome   
+
+Dans le fichier main.js ajouter ses lignes :
+    import { library } from '@fortawesome/fontawesome-svg-core'
+    import { faEye, faTrashAlt, faPhone } from '@fortawesome/free-solid-svg-icons'
+    import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+    library.add(faEye, faTrashAlt, faPhone)
+    Vue.component('font-awesome-icon', FontAwesomeIcon)
+
+    Attention :
+        Les " faEye, faTrashAlt, faPhone " sont les noms  des icones que nous voulons utiliser et qui nous avons trouver en :   
+           -> https://fontawesome.com/icons?d=gallery&q=visi&c=accessibility,interfaces,objects,shapes
+
+Dans le vue, le icone est déclaré :
+        <font-awesome-icon icon="eye"/>
+
+============================================================================================================================
+***** INSTALLER AXIOS - API *****
+
+Installation du Axios : 
+    1) npm install axios --save
 
 
