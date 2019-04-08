@@ -10,14 +10,14 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 
 //icons fortawesome
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faEye, faTrashAlt, faPhone } from '@fortawesome/free-solid-svg-icons'
+import { faEye, faTrashAlt, faPhone, faAddressCard as falAddressCard } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-library.add(faEye, faTrashAlt, faPhone)
+library.add(faEye, faTrashAlt, faPhone, falAddressCard)
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
-//
-
-
+//axios
+//import axios from 'axios'
+// Vue.use(axios)
 
 Vue.config.productionTip = false
 

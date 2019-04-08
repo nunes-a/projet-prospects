@@ -24,19 +24,18 @@
 	  </tbody>
 	</table>
 
-	<div>{{ info }}</div>
+	<div>{{ results }}</div>
  
   </div>
 </template>
 
 <script>
-import FooterComp from '@/components/FooterComp.vue'
 
 export default {
 	name: 'mesprospects',
 
 	components: {
-		FooterComp
+
 	},
 
 	data: function() {
@@ -49,7 +48,7 @@ export default {
 		            id: 2, nom: "José", prenom: "Miguel"
 		        }
 	    	],
-	    	info: null
+//	    	results: []
 		}
 	},
 
@@ -63,10 +62,22 @@ export default {
 	},
 
 	mounted () {
-	    axios
-	      .get('https://api.coindesk.com/v1/bpi/currentprice.json')
-	      .then(response => (this.info = response))
-	  }
+	
+//	    $.getJSON('http://51.75.126.27/appback/public/api/equipe/1', json => {
+//          this.commerciaux = json.data
+//          console.log(json.data)
+//        })
+//		axios
+//	      .get('http://51.75.126.27/appback/public/api/equipe/1')
+//	      .then(response => (this.info = response))
+//		
+//
+//
+//		axios.get("https://api.nytimes.com/svc/topstories/v2/home.json?api-key=your_api_key")
+//	    .then(response => {this.results = response.data.results})
+
+		}
+
 
 
 }
@@ -87,9 +98,13 @@ table {
 	margin: 20px auto;
 }
 
+thead {
+	background-color: #25a773;
+	color: #ffffff;
+}
+
 table > thead > tr > th {
 	border: none;
-	color: #f7b200;
 }
 
 </style>

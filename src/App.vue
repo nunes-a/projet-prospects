@@ -1,10 +1,12 @@
 <template>
   <div id="app">
+    <!--
     <div id="nav">
       <router-link to="/">Home</router-link>
       <router-link to="/about">About</router-link>
       <router-link to="/intranet" class="intra">Intranet</router-link>
     </div>
+    -->
     <router-view/>
   </div>
 </template>
@@ -36,10 +38,10 @@ html, body {
 #nav a {
   font-weight: bold;
   color: #ffffff;
-  margin: 0;
-  padding: 0 20px;
+  /*margin: 0;
+  padding: 0 20px;*/
   text-decoration: none;
-  display: inline-block;
+  /*display: inline-block;*/
 }
 
 #nav a.router-link-exact-active {
@@ -47,9 +49,9 @@ html, body {
   background-color: #fff;
 }
 
-.intra {
+/*.intra {
   float: right;
-}
+}*/
 
 a:target {
   border: none;
