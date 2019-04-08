@@ -17,14 +17,14 @@
 	    <tr v-for="prospect in prospects">
 	      <td>{{prospect.nom}}</td>
 	      <td>{{prospect.prenom}}</td>
-	      <td><font-awesome-icon  v-on:click="removeProspect(prospect)" icon="trash-alt"/></td>
-	      <td><font-awesome-icon icon="eye"/></td>
-	      <td><font-awesome-icon icon="phone"/></td>
+	      <td><span class="entypo-trash" v-on:click="removeProspect(prospect)"></span></td>
+	      <td><span class="entypo-user"></span></td>
+	      <td><span class="entypo-phone"></span></td>
 	    </tr>
 	  </tbody>
 	</table>
 
-	<div>{{ results }}</div>
+	<div>{{ response }}</div>
  
   </div>
 </template>
@@ -48,7 +48,7 @@ export default {
 		            id: 2, nom: "José", prenom: "Miguel"
 		        }
 	    	],
-//	    	results: []
+	    	response: []
 		}
 	},
 
@@ -62,14 +62,14 @@ export default {
 	},
 
 	mounted () {
-	
+
 //	    $.getJSON('http://51.75.126.27/appback/public/api/equipe/1', json => {
 //          this.commerciaux = json.data
 //          console.log(json.data)
 //        })
-//		axios
-//	      .get('http://51.75.126.27/appback/public/api/equipe/1')
-//	      .then(response => (this.info = response))
+		axios
+	      .get('http://51.75.126.27/appback/public/api/equipe/1')
+	      .then(response => (this.info = response))
 //		
 //
 //
@@ -84,12 +84,12 @@ export default {
 </script>
 
 <style scoped>
+@import url(http://weloveiconfonts.com/api/?family=entypo);
+[class*="entypo-"]:before {font-family: 'entypo', sans-serif;}
 
 .mesprosp {
-	/*width: 400px;*/
-	margin: 10px auto;
-	padding: 20px;
-	/*border: 2px solid #f1f1f1;*/
+	margin: 0 auto;
+	padding: 35px;
 }
 
 table {
