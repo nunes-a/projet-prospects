@@ -17,7 +17,7 @@ Vue.component('font-awesome-icon', FontAwesomeIcon)
 
 //axios
 //import axios from 'axios'
-// Vue.use(axios)
+//Vue.use(axios)
 
 Vue.config.productionTip = false
 

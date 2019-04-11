@@ -7,7 +7,7 @@
 	    	<div id="fond-icon">
 		    	<router-link to="/intranet/mesprospects" class="intra">
 		    		<span class="entypo-vcard"></span>
-		    		<p>Mes Commerciaux</p>
+		    		<p>Mon profil</p>
 		    	</router-link>
 		    </div>
 	    </div>
@@ -16,14 +16,14 @@
 	    	<div id="fond-icon">
 	    		<router-link to="/intranet/mesprospects" class="intra">
 		    		<span class="entypo-folder"></span>
-		    		<p>Des Prospects</p>
+		    		<p>Mes Prospects</p>
 		    	</router-link>
 		    </div>
 	    </div>
 
 	    <div class="col-12 col-md-4 p-3">
 	    	<div id="fond-icon">
-		    	<router-link to="/intranet/mesprospects" class="intra">
+		    	<router-link to="/" class="intra">
 		    		<span class="entypo-cancel-circled"></span>
 		    		<p>Déconnexion</p>
 		    	</router-link>
@@ -38,7 +38,7 @@
 <script>
 
 export default {
-	name: 'accueiladmin',
+	name: 'commercial',
 
 	components: {
 		

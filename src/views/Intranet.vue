@@ -4,7 +4,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-12">
-				<h3>PROSP.ECT</h3>
+				<h3>PROSPECTS</h3>
 			</div>
 		</div>
 		<div class="row">
@@ -131,6 +131,5 @@ label {
 span {
 	font-size: 12px;
 }
-
 
 </style>

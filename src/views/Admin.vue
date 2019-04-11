@@ -5,9 +5,9 @@
 
 	    <div class="col-12 col-md-4 p-3">
 	    	<div id="fond-icon">
-		    	<router-link to="/intranet/mesprospects" class="intra">
+		    	<router-link to="/admin/mescommerciaux" class="intra">
 		    		<span class="entypo-vcard"></span>
-		    		<p>Mon profil</p>
+		    		<p>Mes Commerciaux</p>
 		    	</router-link>
 		    </div>
 	    </div>
@@ -16,14 +16,14 @@
 	    	<div id="fond-icon">
 	    		<router-link to="/intranet/mesprospects" class="intra">
 		    		<span class="entypo-folder"></span>
-		    		<p>Mes Prospects</p>
+		    		<p>Des Prospects</p>
 		    	</router-link>
 		    </div>
 	    </div>
 
 	    <div class="col-12 col-md-4 p-3">
 	    	<div id="fond-icon">
-		    	<router-link to="/intranet/mesprospects" class="intra">
+		    	<router-link to="/" class="intra">
 		    		<span class="entypo-cancel-circled"></span>
 		    		<p>Déconnexion</p>
 		    	</router-link>
@@ -36,13 +36,9 @@
 </template>
 
 <script>
-
 export default {
-	name: 'accueilcommercial',
+	name: 'admin'
 
-	components: {
-		
-	}
 }
 </script>
 
@@ -53,11 +49,13 @@ export default {
 
 .container, .row {
 	height: 70vh;
+	transition: 0.5;
 }
 
 a {
 	font-size: 150px;
 	color : #25a773;
+	outline: 0;
 	transition: 0.5s;
 }
 
@@ -72,6 +70,10 @@ p {
 	text-align: center;
 	padding: 0;
 	margin: -40px 0;
+}
+
+a:target {
+  border: none;
 }
 
 </style>

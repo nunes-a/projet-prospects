@@ -13,33 +13,44 @@ export default new Router({
     //   name: 'home',
     //   component: Home
     // },
-    // {
-    //   path: '/about',
-    //   name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-//      component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
-//    },
     {
       path: '/',
       name: 'intranet',
       component: () => import('./views/Intranet.vue')
     },
+
+//ADMIN
     {
-      path: '/accueiladmin',
-      name: 'accueiladmin',
-      component: () => import('./views/AccueilAdmin.vue')
+      path: '/admin',
+      name: 'admin',
+      component: () => import('./views/Admin.vue')
     },
     {
-      path: '/accueilcommercial',
-      name: 'accueilcommercial',
-      component: () => import('./views/AccueilCommercial.vue')
+      path: '/admin/mescommerciaux',
+      name: 'mescommerciaux',
+      component: () => import('./views/MesCommerciaux.vue')
     },
     {
-      path: '/intranet/mesprospects',
-      name: 'mesprospects',
-      component: () => import('./views/MesProspects.vue')
-    }
+      path: '/admin/mescommerciaux/profil/:id',
+      name: 'profilcommercial',
+      component: () => import('./views/ProfilCommercial.vue')
+    },
+    {
+      path: '/admin/mescommerciaux/inscription',
+      name: 'inscriptioncommercial',
+      component: () => import('./views/InscriptionCommercial.vue')
+    },
+
+
+
+
+    {
+      path: '/commercial',
+      name: 'commercial',
+      component: () => import('./views/Commercial.vue')
+    },
+
+
+
   ]
 })
