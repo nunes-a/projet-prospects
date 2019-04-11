@@ -1,69 +1,60 @@
 <template>
-  <div class="container">
+<div class="container-fluid p-0 m-0">
+	<MenuComponent></MenuComponent>
+<!--
+  	<nav class="navbar navbar-expand-lg navbar-light">
+		<a class="navbar-brand" id="logo">PROSPECTS</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+			<div class="navbar-nav" id="menutxt">
+	      	
+		    	<a class="nav-item nav-link active font-weight-bolder">Commerciaux</a>
+			
+	    		<router-link to="/admin/desprospects">
+		    		<a class="nav-item nav-link text-white">Prospects</a>
+				</router-link>
 
-  	<div class="row align-items-center">
-
-	    <div class="col-12 col-md-4 p-3">
-	    	<div id="fond-icon">
-		    	<router-link to="/intranet/mescommerciaux" class="intra">
-		    		<span class="entypo-vcard"></span>
-		    		<p>Mes Commerciaux</p>
-		    	</router-link>
-		    </div>
-	    </div>
-
-	    <div class="col-12 col-md-4 p-3">
-	    	<div id="fond-icon">
-	    		<router-link to="/intranet/admin_mescommerciaux" class="intra">
-		    		<span class="entypo-folder"></span>
-		    		<p>Des Prospects</p>
-		    	</router-link>
-		    </div>
-	    </div>
-
-	    <div class="col-12 col-md-4 p-3">
-	    	<div id="fond-icon">
-		    	<router-link to="/" class="intra">
-		    		<span class="entypo-cancel-circled"></span>
-		    		<p>Déconnexion</p>
-		    	</router-link>
+	    		<router-link to="/">
+		    		<a class="nav-item nav-link text-white">Déconnexion</a>
+				</router-link>
 	    	</div>
-	    </div>
-
-	</div>
-
-
-
-
-
+	  	</div>
+	</nav>
+-->
 	<table class="table table-striped">
-	  <thead>
-	    <tr>
-	      <th scope="col">Nom</th>
-	      <th scope="col">Prénom</th>
-	      <th scope="col"></th>
-	      <th scope="col"></th>
-	    </tr>
-	  </thead>
-	  <tbody>
-	    <tr v-for="commercial of commerciaux">
-	      <td>{{commercial.nom}}</td>
-	      <td>{{commercial.prenom}}</td>
-	      <td><router-link :to="'/admin/mescommerciaux/profil/' + commercial.id"><span class="entypo-eye"></span></router-link></td>
-	      <td><span class="entypo-phone"></span></td>
-
-	    </tr>
-	  </tbody>
+		<thead>
+	    	<tr>
+	    		<th scope="col">Nom</th>
+	    		<th scope="col">Prénom</th>
+	    		<th scope="col"></th>
+	    		<th scope="col"></th>
+	    	</tr>
+	 	</thead>
+	  	<tbody>
+	    	<tr v-for="commercial of commerciaux">
+	    		<td>{{commercial.nom}}</td>
+	    		<td>{{commercial.prenom}}</td>
+	    		<td><router-link :to="'/admin/mescommerciaux/profil/' + commercial.id"><span class="entypo-eye"></span></router-link></td>
+	    		<td><span class="entypo-phone"></span></td>
+	    	</tr>
+	  	</tbody>
 	</table>
- 
-  </div>
 
+</div>
 </template>
 
 <script>
 
+import MenuComponent from '@/components/MenuComponent.vue'
+
 export default {
 	name: 'mescommerciaux',
+	
+	components: {
+    	MenuComponent
+  	},
 
 	data: function() {
 		return {
@@ -88,10 +79,51 @@ export default {
 [class*="entypo-"]:before {font-family: 'entypo', sans-serif;}
 @import url('https://fonts.googleapis.com/css?family=Baloo+Chettan');
 
-.mesprosp {
-	margin: 0 auto;
-	padding: 0;
+.navbar {
+	background-color: #25a773;
+	/*padding: 15px;*/
 }
+
+#logo {
+	font-family: 'Baloo Chettan', cursive;
+	font-size: 30px;
+	color: #ffffff;
+	text-shadow: 0 0 15px #000000;
+}
+
+button {
+	outline: 0;
+}
+
+a {
+	text-decoration: none;
+	outline: 0;
+	margin: 0 20px;
+}
+navbar-nav > a:hover {
+	background-color: #ffffff;
+
+}
+
+
+
+
+table {
+	width: 80%;
+	padding: 0;
+	margin: 30px auto;
+}
+
+thead {
+	color: #25a773;
+}
+
+table > thead > tr > th {
+	border: none;
+}
+
+
+/*
 
 table {
 	width: 350px;
@@ -106,12 +138,12 @@ thead {
 
 table > thead > tr > th {
 	border: none;
-}
+}*/
 
 
 
 
-/*btn*/
+/*btn*//*
 a {
 	font-size: 50px;
 	color : #25a773;
@@ -122,7 +154,7 @@ a {
 a:hover {
 	text-decoration: none;
 	color: #ccc;
-}
+}*/
 
 p {
 	font-family: 'Baloo Chettan', cursive;
@@ -135,6 +167,10 @@ p {
 table > thead > tr > td > router-link > span {
 	font-size: 20px;
 	line-heigth: 20px;
+}
+
+#deconnecter {
+	float: right;
 }
 
 </style>

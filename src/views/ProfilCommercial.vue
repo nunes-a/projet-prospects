@@ -1,7 +1,9 @@
 <template>
   <div class="prosp">
 
-	<div class="card" > <!--v-for="commercial in commerciaux">-->
+  	<router-link to="/admin/mescommerciaux/">Retour</router-link>
+
+	<div class="card" >
 	  <h4 class="card-header">
 	  	<strong> {{commerciaux.nom}} </strong> {{commerciaux.prenom}}
 	  </h4>
@@ -38,7 +40,6 @@ export default {
 	},
 
 	mounted () {
-		//var ide = this.$route.params.id;
 		axios
 	    	.get('http://51.75.126.27/prospect/public/api/commerciaux/' + this.$route.params.id)
     		.then(response => {
