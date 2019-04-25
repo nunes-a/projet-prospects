@@ -1,10 +1,7 @@
 <template>
-  <div class="prosp">
+<div class="container-fluid p-0 m-0">
 
-	<div class="card">
-	  <h4 class="card-header"><span class="entypo-user-add"></span></h4>
-	  <div class="card-body" id="profilDtls">
-	    <div class="card-text">
+
 	    	<form>
 	    		<div class="form-row">
 					<div class="form-group col-md-6">
@@ -29,41 +26,31 @@
 				</div>
 
 				<div class="form-row">
-					<div class="form-group col-md-4">
+					<div class="form-group col-md-6">
 				      <input type="text" placeholder="Code Postal" name="adr_postal">
 				    </div>
-					<div class="form-group col-md-4">
-				      <input type="text" placeholder="VIlle" name="adr_ville">
-					</div>
-					<div class="form-group col-md-4">
-				      <input type="text" placeholder="Pays" name="pays">
+					<div class="form-group col-md-6">
+				      <input type="text" placeholder="Ville" name="adr_ville">
 					</div>
 				</div>
 
 				<div class="form-row">
-					<div class="form-group col-md-6">
-				      <input type="text" placeholder="Entreprise" name="entreprise">
+					<div class="form-group col-md-12">
+				      <input type="text" placeholder="Mot de passe" name="adr_postal">
 				    </div>
-					<div class="form-group col-md-6">
-				      <input type="text" placeholder="Profession" name="profession">
-					</div>
 				</div>
+
+				<button type="button" class="btn btn-light">Enregistrer</button>
 			</form> 
-	    </div>
-		<a href="#" class="btn btn-primary">Enregistrer</a>
-	  </div>
-	</div>
-  </div>
+
+		
+</div>
 </template>
 
 <script>
 
 export default {
-	name: 'inscriptioncommercial',
-
-	components: {
-
-	},
+	name: 'InscCommercialComponent',
 
 	data: function() {
 		return {
@@ -85,14 +72,6 @@ export default {
 </script>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css?family=Baloo+Chettan');
-@import url(http://weloveiconfonts.com/api/?family=entypo);
-[class*="entypo-"]:before {font-family: 'entypo', sans-serif;}
-
-.prosp {
-	margin: 0 auto;
-	padding: 35px;
-}
 
 .card-header {
 	background-color: #25a773;
@@ -116,8 +95,19 @@ strong {
 }
 
 input {
+	font-size: 12px;
 	width: 100%;
 	height: 40px;
+}
+
+button {
+	border-radius: 0;
+	border: 0;
+	transition: 0.5s;
+	background-color: #25a773;
+	color: #ffffff;
+	outline: 0;
+	width: 100%;
 }
 
 </style>

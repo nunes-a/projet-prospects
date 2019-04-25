@@ -1,7 +1,12 @@
 <template>
-  <div class="intranet">
+<div class="intranet">
 
 	<div class="container">
+		<div class="row">
+			<div class="col-12" id="spc">
+				<span class="entypo-network"></span>
+			</div>
+		</div>
 		<div class="row">
 			<div class="col-12">
 				<h3>PROSPECTS</h3>
@@ -10,7 +15,7 @@
 		<div class="row">
 			<div class="col-12">
 			  	<button type="button" class="btn btn-light" data-toggle="modal" data-target="#exampleModal" id="btn-acc">
-				  Connexion
+				  CONNECTER
 				</button>
 			</div>
 		</div>
@@ -47,11 +52,10 @@
 	  </div>
 	</div>
 
-  </div>
+</div>
 </template>
 
 <script>
-
 export default {
   name: 'intranet',
   components: {
@@ -61,6 +65,8 @@ export default {
 </script>
 
 <style scoped>
+@import url(http://weloveiconfonts.com/api/?family=entypo);
+[class*="entypo-"]:before {font-family: 'entypo', sans-serif;}
 @import url('https://fonts.googleapis.com/css?family=Baloo+Chettan');
 
 .intranet {
@@ -73,17 +79,35 @@ export default {
 	align-items: center;
 }
 
-h3 {
+.entypo-network {
 	color: #ffffff;
-	padding: 20px;
 	font-family: 'Baloo Chettan', cursive;
-	font-size: 50px;
-	text-shadow: 0 0 10px #25a773;
+	font-size: 200px;
+	text-shadow: 0 0 10px #000000;
+	padding: 0;
+	margin: 0;
 }
 
-#btn-acc, p {
-	width: 250px;
+h3 {
+	color: #ffffff;
+	font-family: 'Baloo Chettan', cursive;
+	font-size: 58px;
+	text-shadow: 0 0 10px #000000;
+	margin-top: -60px;
+}
+
+#btn-acc {
+	width: 300px;
+	height: 45px;
+	padding: 0;
 	margin: 0 auto;
+	font-family: 'Baloo Chettan', cursive;
+	font-size: 16px;
+	box-shadow: 0 0 10px #000000;
+}
+
+.modal {
+	font-size: 12px;
 }
 
 .modal-content {
@@ -106,6 +130,7 @@ button {
 	transition: 0.5s;
 	background-color: #25a773;
 	color: #ffffff;
+	outline: 0;
 }
 
 .psw {
@@ -127,9 +152,13 @@ label {
 	margin: 5px 20px;
 	float: left;
 }
-
+/*
 span {
 	font-size: 12px;
+}*/
+
+input, a {
+	outline: 0;
 }
 
 </style>

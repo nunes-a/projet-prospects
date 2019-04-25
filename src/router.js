@@ -20,38 +20,33 @@ export default new Router({
     },
 
 //ADMIN
+
     {
-      path: '/admin',
-      name: 'admin',
-      component: () => import('./views/Admin.vue')
+      path: '/admin/commerciaux',
+      name: 'commerciaux',
+      component: () => import('./views/Commerciaux.vue')
     },
     {
-      path: '/admin/mescommerciaux',
-      name: 'mescommerciaux',
-      component: () => import('./views/MesCommerciaux.vue')
-    },
-    {
-      path: '/admin/mescommerciaux/profil/:id',
+      path: '/admin/commerciaux/:id',
       name: 'profilcommercial',
       component: () => import('./views/ProfilCommercial.vue')
     },
-    {
-      path: '/admin/mescommerciaux/inscription',
-      name: 'inscriptioncommercial',
-      component: () => import('./views/InscriptionCommercial.vue')
-    },
-
-
-
-
-
-
 
     {
-      path: '/commercial',
-      name: 'commercial',
-      component: () => import('./views/Commercial.vue')
+      path: '/admin/prospects',
+      name: 'prospects',
+      component: () => import('./views/Prospects.vue')
     },
+    {
+      path: '/admin/prospects/:id',
+      name: 'profilprospects',
+      component: () => import('./views/ProfilProspect.vue')
+    }
+
+
+
+
+
 
 
 
