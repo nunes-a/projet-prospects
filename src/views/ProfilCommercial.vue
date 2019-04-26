@@ -25,7 +25,7 @@
 	    			<a href="#" class="card-link" id="opt">Modifier</a>
 	    		</div>
 	    		<div class="col-12 col-md-6 p-2">
-	    			<a href="#" class="card-link" id="opt">Supprimer</a>
+	    			<button class="card-link" id="opt" @click="supCommercial">Supprimer</button>
 	    		</div>
 	    	</div>
 	  	</div>
@@ -49,6 +49,13 @@ export default {
 			commerciaux: []
 		}
 	},
+
+	methods: {
+		supCommercial(){
+			axios.delete('http://51.75.126.27/prospect/public/api/commerciaux/' + this.$route.params.id)
+		}
+	},
+		
 
 	mounted () {
 		axios
@@ -74,10 +81,12 @@ export default {
 	text-align: right;
 }
 
-a {
+a, button {
 	color: #25a773;
 	outline: 0;
 	text-decoration: none;
+	border: none;
+	background-color: transparent;
 }
 
 .card {

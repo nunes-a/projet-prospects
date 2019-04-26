@@ -22,28 +22,28 @@
 				      <input type="text" placeholder="Téléphone" v-model="Commercial.tel" required>
 				    </div>
 					<div class="form-group col-md-6">
-				      <input type="text" placeholder="E-mail" v-model="Commercial.mail" required>
+				      <input type="email" placeholder="E-mail" v-model="Commercial.mail" required>
 					</div>
 					<div class="form-group col-12 col-md-2">
-					    <input type="text" placeholder="Nùmero" v-model="Commercial.adr_no">
+					    <input type="text" placeholder="Nùmero" v-model="Commercial.adr_no" required>
 					</div>
 					<div class="form-group col-12 col-md-10">
-					    <input type="text" placeholder="Adresse" v-model="Commercial.adr_rue">
+					    <input type="text" placeholder="Adresse" v-model="Commercial.adr_rue" required>
 					</div>
 				</div>
 
 				<div class="form-row">
 					<div class="form-group col-md-6">
-				      <input type="text" placeholder="Code Postal" v-model="Commercial.adr_postal">
+				      <input type="text" placeholder="Code Postal" v-model="Commercial.adr_postal" required>
 				    </div>
 					<div class="form-group col-md-6">
-				      <input type="text" placeholder="Ville" v-model="Commercial.adr_ville">
+				      <input type="text" placeholder="Ville" v-model="Commercial.adr_ville" required>
 					</div>
 				</div>
 
 				<div class="form-row">
 					<div class="form-group col-md-12">
-				      <input type="password" placeholder="Mot de passe" v-model="Commercial.password">
+				      <input type="password" placeholder="Mot de passe" v-model="Commercial.password" required>
 				    </div>
 				</div>
 
@@ -99,7 +99,7 @@ export default {
 	      			console.log(response);
 	      		})
 	      		.catch((error) => {
-	      			console.log(error);
+	      			console.log(error.response);
 	      		});
 		}
 	},
