@@ -70,7 +70,7 @@ export default {
       			console.log(response.data)
       			this.commerciaux = response.data
       		})
-		}
+	}
 }
 </script>
 

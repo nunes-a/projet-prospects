@@ -46,7 +46,7 @@
 	      </div>
 	      <div class="modal-footer">
 	        <span class="psw">J'ai oublié ma <a href="#">mot de passe</a></span>
-	        <button type="button" class="btn btn-light">Connecter</button>
+	        <button type="button" class="btn btn-light" onclick="window.location.href='/admin/commerciaux'">Connecter</button>
 	      </div>
 	    </div>
 	  </div>

@@ -20,7 +20,6 @@ export default new Router({
     },
 
 //ADMIN
-
     {
       path: '/admin/commerciaux',
       name: 'commerciaux',

@@ -5,42 +5,49 @@
 	    	<form>
 	    		<div class="form-row">
 					<div class="form-group col-md-6">
-				      <input type="text" placeholder="Nom" name="nom" required>
+				      <input type="text" placeholder="Nom" v-model="Commercial.nom" required>
 				    </div>
 					<div class="form-group col-md-6">
-				      <input type="text" placeholder="Prénom" name="prenom" required>
+				      <input type="text" placeholder="Prénom" v-model="Commercial.prenom" required>
 					</div>
 
 					<div class="form-group col-md-6">
-				      <input type="text" placeholder="Téléphone" name="tel" required>
+				      <input type="text" placeholder="Référence" v-model="Commercial.ref" required>
 				    </div>
 					<div class="form-group col-md-6">
-				      <input type="text" placeholder="E-mail" name="mail" required>
+				      <input type="text" placeholder="Type" v-model="Commercial.type" required>
+					</div>
+
+					<div class="form-group col-md-6">
+				      <input type="text" placeholder="Téléphone" v-model="Commercial.tel" required>
+				    </div>
+					<div class="form-group col-md-6">
+				      <input type="text" placeholder="E-mail" v-model="Commercial.mail" required>
 					</div>
 					<div class="form-group col-12 col-md-2">
-					    <input type="text" placeholder="Nùmero" name="adr_no">
+					    <input type="text" placeholder="Nùmero" v-model="Commercial.adr_no">
 					</div>
 					<div class="form-group col-12 col-md-10">
-					    <input type="text" placeholder="Adresse" name="adr_rue">
+					    <input type="text" placeholder="Adresse" v-model="Commercial.adr_rue">
 					</div>
 				</div>
 
 				<div class="form-row">
 					<div class="form-group col-md-6">
-				      <input type="text" placeholder="Code Postal" name="adr_postal">
+				      <input type="text" placeholder="Code Postal" v-model="Commercial.adr_postal">
 				    </div>
 					<div class="form-group col-md-6">
-				      <input type="text" placeholder="Ville" name="adr_ville">
+				      <input type="text" placeholder="Ville" v-model="Commercial.adr_ville">
 					</div>
 				</div>
 
 				<div class="form-row">
 					<div class="form-group col-md-12">
-				      <input type="text" placeholder="Mot de passe" name="adr_postal">
+				      <input type="password" placeholder="Mot de passe" v-model="Commercial.password">
 				    </div>
 				</div>
 
-				<button type="button" class="btn btn-light">Enregistrer</button>
+				<button type="button" class="btn btn-light" @click="addCommercial">Enregistrer</button>
 			</form> 
 
 		
@@ -54,10 +61,47 @@ export default {
 
 	data: function() {
 		return {
+			Commercial: {
+				nom:'',
+				prenom:'',
+				ref: '',
+				type:'',
+				tel:'',
+				mail:'',
+				adr_no:'',
+				adr_rue:'',
+				adr_ville:'',
+				adr_postal:'',
+				password:''
+			}
 		}
 	},
 
 	methods: {
+		addCommercial(){
+			let newCommercial = {
+				nom: this.Commercial.nom,
+				prenom: this.Commercial.prenom,
+				ref: this.Commercial.ref,
+				type: this.Commercial.type,
+				tel: this.Commercial.tel,
+				mail: this.Commercial.mail,
+				adr_no: this.Commercial.adr_no,
+				adr_rue: this.Commercial.adr_rue,
+				adr_ville: this.Commercial.adr_ville,
+				adr_postal: this.Commercial.adr_postal,
+				password: this.Commercial.password
+			}
+
+			console.log(newCommercial);
+			axios.post('http://51.75.126.27/prospect/public/api/commerciaux')
+				.then((response) => {
+	      			console.log(response);
+	      		})
+	      		.catch((error) => {
+	      			console.log(error);
+	      		});
+		}
 	},
 
 	mounted () {
